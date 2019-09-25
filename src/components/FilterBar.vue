@@ -5,7 +5,7 @@
 			color="red darken-3"
 			dark
 			hide-on-scroll
-			scroll-target="results"
+			scroll-target="#results"
 		>
 			<v-app-bar-nav-icon></v-app-bar-nav-icon>
 			<v-toolbar-title>Filter Bar</v-toolbar-title>
@@ -18,7 +18,7 @@
 			class="overflow-y-auto"
 			max-height="600"
 		>
-			<v-container style="height: 1000px;"></v-container>
+			<v-container style="height: 10000px;"></v-container>
 		</v-sheet>
 	</v-card>
 </template>
