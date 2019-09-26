@@ -1,24 +1,22 @@
 <template>
-	<v-card class="overflow-hidden">
-		<v-app-bar
-			absolute
-			color="red darken-3"
-			dark
-			hide-on-scroll
-			scroll-target="#results"
-		>
-			<v-app-bar-nav-icon></v-app-bar-nav-icon>
-			<v-toolbar-title>Filter Bar</v-toolbar-title>
-			<div class="flex-grow-1"></div>
+	<v-container fluid>
+	<v-row justify="center">
+		<v-card>
+			<v-card-actions>
+				<v-overflow-btn large label="Fall 2019">
+				</v-overflow-btn>
+			</v-card-actions>
+		</v-card>
 
-		</v-app-bar>
+		<v-divider vertical></v-divider>
 
-		<v-sheet
-			id="results"
-			class="overflow-y-auto"
-			max-height="600"
-		>
-			<v-container style="height: 10000px;"></v-container>
-		</v-sheet>
-	</v-card>
+		<v-card min-width="300">
+			<v-card-actions>
+				<v-container>
+				<v-btn tile block large>Filters</v-btn>
+				</v-container>
+			</v-card-actions>
+		</v-card>
+	</v-row>
+	</v-container>
 </template>
