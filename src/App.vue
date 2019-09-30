@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <Course></Course>
+    <FilterBar></FilterBar>
 
     <SearchBar></SearchBar>
 
@@ -9,17 +9,17 @@
 </template>
 
 <script>
-import Course from './components/Course';
-
+import FilterBar from './components/FilterBar';
+import SectionPage from './components/SectionPage';
 import SearchBar from './components/SearchBar';
 
 
 export default {
   name: 'App',
   components: {
-    Course
-
-    SearchBar
+    SearchBar,
+    SectionPage,
+    FilterBar
 
   },
   data: () => ({
