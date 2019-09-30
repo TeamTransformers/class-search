@@ -1,22 +1,25 @@
 <template>
   <v-app>
-    <v-content>
-      <SectionPage/>
-    </v-content>
+    <Course></Course>
+
+    <SearchBar></SearchBar>
+
   </v-app>
 
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
-import SectionPage from './components/SectionPage';
+import Course from './components/Course';
+
+import SearchBar from './components/SearchBar';
 
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    SectionPage,
+    Course
+
+    SearchBar
 
   },
   data: () => ({
