@@ -1,14 +1,15 @@
 <template>
-  <v-app>
-      <v-card class="d-flex flex-row pa-2 justify-start align-center">
-          <v-btn icon>
-              <v-icon>mdi-home</v-icon>
-          </v-btn>
-        <v-card-title>Course Name: #</v-card-title>
+  <v-expansion-panels>
+  <v-expansion-panel>
+        <v-expansion-panel-header>Course Name: #</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <v-card class="d-flex flex-row justify-start align-center">
+        <v-card-title>Section Here</v-card-title>
         <!-- Insert Section Information Component here -->  
-
       </v-card>
-  </v-app>
+        </v-expansion-panel-content>
+  </v-expansion-panel>
+  </v-expansion-panels>
 </template>
 
 <script>
