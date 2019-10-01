@@ -10,13 +10,19 @@
   </v-text-field>
   <v-card v-for="department in searched_departments" :key=department.id>
       <!-- insert course component here -->
-            {{department}}
+            <v-card-title>{{department}}</v-card-title>
+            <Course></Course>
+            <Course></Course>
   </v-card>
 </v-app>
 </template>
 
 <script>
+import Course from './Course';
 export default {
+    components:{
+        Course
+    },
     created(){
         this.searched_departments=this.departments
     },
