@@ -9,7 +9,6 @@
     >
   </v-text-field>
   <v-card v-for="department in searched_departments" :key=department.id>
-      <!-- insert course component here -->
             <v-card-title>{{department}}</v-card-title>
             <Course></Course>
             <Course></Course>

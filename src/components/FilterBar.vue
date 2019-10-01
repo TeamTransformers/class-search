@@ -1,7 +1,6 @@
 <template>
 	<v-expansion-panel>
 		<v-expansion-panel-header>Filters</v-expansion-panel-header>
-
 		<v-expansion-panel-content>
 			<v-container>
 				<v-row>
@@ -22,9 +21,9 @@
 					</v-radio-group>
 
 					<v-col>
-					<v-overflow-btn large label="Start Time"></v-overflow-btn>
-					<v-overflow-btn large label="End Time"></v-overflow-btn>
-					<v-overflow-btn large label="Instructor"></v-overflow-btn>
+					<v-overflow-btn editable large label="Start Time"></v-overflow-btn>
+					<v-overflow-btn editable large label="End Time"></v-overflow-btn>
+					<v-overflow-btn editable large label="Instructor"></v-overflow-btn>
 					</v-col>
 				</v-row>
 			</v-container>
