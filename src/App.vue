@@ -1,7 +1,8 @@
 <template>
   <v-app>
+    <v-expansion-panels>
     <FilterBar></FilterBar>
-
+    </v-expansion-panels>
     <SearchBar></SearchBar>
   </v-app>
 

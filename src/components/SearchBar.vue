@@ -9,24 +9,15 @@
     >
   </v-text-field>
   <v-card v-for="department in searched_departments" :key=department.id>
-      <!-- insert course component here -->
-<<<<<<< HEAD
-            <Course>{{departments}}</Course>
-=======
             <v-card-title>{{department}}</v-card-title>
             <Course></Course>
             <Course></Course>
->>>>>>> dev
   </v-card>
 </v-app>
 </template>
 
 <script>
-<<<<<<< HEAD
-import Course from "./Course";
-=======
 import Course from './Course';
->>>>>>> dev
 export default {
     components:{
         Course
