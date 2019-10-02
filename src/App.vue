@@ -23,5 +23,6 @@ export default {
   data: () => ({
     //
   }),
+  
 };
 </script>
