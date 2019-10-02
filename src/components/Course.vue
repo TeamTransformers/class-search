@@ -5,7 +5,10 @@
         <v-expansion-panel-content>
           <v-card class="d-flex flex-row justify-start align-center">
         <v-card-title>
-          <v-simple-table>
+          <v-simple-table 
+          :dense="dense" 
+          :fixed-header="fixedHeader"
+          :height="height">
             <template v-slot:default>
               <thead>
                 <tr>
@@ -24,21 +27,19 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="item in courses" :key="item.name">
+                <tr v-for="item in courses" :key="item.session">
                   <td>{{ item.detail }}</td>
-                  <td>{{ item.session }}</td>
-                  <td>{{ item.section }}</td>
-                  <td>{{ item.textbooks }}</td>
-                  <td>{{ item.classnum }}</td>
-                  <td>{{ item.seats }}</td>
-                  <td>{{ item.status }}</td>
-                  <td>{{ item.comp }}</td>
-                  <td>{{ item.location }}</td>
-                  <td>{{ item.days }}{{ item.time }}</td>
-                  <td>{{ item.instruct }}</td>
-                  <td>{{ item.consent }}</td>
-
-
+                  <td class="text-center">{{ item.session }}</td>
+                  <td class="text-center">{{ item.section }}</td>
+                  <td>{{ item.textbook }}</td>
+                  <td class="text-center">{{ item.classnum }}</td>
+                  <td class="text-center">{{ item.seats }}</td>
+                  <td class="text-center">{{ item.status }}</td>
+                  <td class="text-center">{{ item.comp }}</td>
+                  <td class="text-center">{{ item.loc }}</td>
+                  <td>{{ item.day }}{{ item.time }}</td>
+                  <td>{{ item.instructor }}</td>
+                  <td>{{ item.content }}</td>
                 </tr>
               </tbody>
             </template>
@@ -54,54 +55,86 @@
 
 <script>
   export default {
-    data () {
-      return {
-        courses: [
-          {
-            name: 'Frozen Yogurt',
-            calories: 159,
-          },
-          {
-            name: 'Ice cream sandwich',
-            calories: 237,
-          },
-          {
-            name: 'Eclair',
-            calories: 262,
-          },
-          {
-            name: 'Cupcake',
-            calories: 305,
-          },
-          {
-            name: 'Gingerbread',
-            calories: 356,
-          },
-          {
-            name: 'Jelly bean',
-            calories: 375,
-          },
-          {
-            name: 'Lollipop',
-            calories: 392,
-          },
-          {
-            name: 'Honeycomb',
-            calories: 408,
-          },
-          {
-            name: 'Donut',
-            calories: 452,
-          },
-          {
-            name: 'KitKat',
-            calories: 518,
-          },
-        ],
-      }
-    },
+    data: () => ({
+      dense: false,
+      fixedHeader: false,
+      height: 300,
+      courses: [
+        {
+          detail: null,
+          session: 1,
+          section: 1,
+          textbook: null,
+          classnum: 16320,
+          seats: '-10',
+          status: 'closed',
+          comp: 'LEC',
+          loc: 'JD3510',
+          day: 'Tu/Th',
+          instructor: 'McInhenny, Robert D',
+          content: null,
+        },
+        {
+          detail: null,
+          session: 1,
+          section: 2,
+          textbook: null,
+          classnum: 16321,
+          seats: '-2',
+          status: 'closed',
+          comp: 'LEC',
+          loc: 'JD1618',
+          day: 'Tu/Th',
+          instructor: 'Lazik, George L',
+          content: null,
+        },
+        {
+          detail: null,
+          session: 1,
+          section: 3,
+          textbook: null,
+          classnum: 16839,
+          seats: '-7',
+          status: 'closed',
+          comp: 'LEC',
+          loc: 'JD1618',
+          day: 'Tu/Th',
+          instructor: 'Lazik, George L',
+          content: null,
+        },
+        {
+          detail: null,
+          session: 1,
+          section: 4,
+          textbook: null,
+          classnum: 17067,
+          seats: '0',
+          status: 'closed',
+          comp: 'LEC',
+          loc: 'JD1600',
+          day: 'Tu/Th',
+          instructor: 'Lazik, George L',
+          content: null,
+        },
+        {
+          detail: null,
+          session: 1,
+          section: 5,
+          textbook: null,
+          classnum: 21293,
+          seats: '-2',
+          status: 'closed',
+          comp: 'LEC',
+          loc: 'JD3510',
+          day: 'Tu',
+          instructor: 'Bhatt, Vijay J',
+          content: null,
+        },
+      ],
+    }),
   }
 </script>
+
 
 <style>
 
