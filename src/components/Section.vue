@@ -1,124 +1,110 @@
 <template>
-  <v-simple-table 
-    dense="dense" 
-    :fixed-header="fixedHeader"
-    :height="height">
-    <template v-slot:default>
-      <thead>
-        <tr>
-          <th class="text-left">Detail</th>
-          <th class="text-left">Session</th>
-          <th class="text-left">Section</th>
-          <th class="text-left">Textbooks</th>
-          <th class="text-left">Class #</th>
-          <th class="text-left">Seats available</th>
-          <th class="text-left">Enrolled status</th>
-          <th class="text-left">Comp</th>
-          <th class="text-left">Location</th>
-          <th class="text-left">Days/Time</th>
-          <th class="text-left">Instructor</th>
-          <th class="text-left">Consent</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="item in courses" :key="item.session">
-          <td>{{ item.detail }}</td>
-          <td class="text-center">{{ item.session }}</td>
-          <td class="text-center">{{ item.section }}</td>
-          <td>{{ item.textbook }}</td>
-          <td class="text-center">{{ item.classnum }}</td>
-          <td class="text-center">{{ item.seats }}</td>
-          <td class="text-center">{{ item.status }}</td>
-          <td class="text-center">{{ item.comp }}</td>
-          <td class="text-center">{{ item.loc }}</td>
-          <td>{{ item.day }}{{ item.time }}</td>
-          <td>{{ item.instructor }}</td>
-          <td>{{ item.content }}</td>
-          </tr>
-      </tbody>
-    </template>  
-  </v-simple-table>
+  <v-data-table
+    :headers="headers"
+    :items="courses"
+    :items-per-page="5"
+    :hide-default-footer="true"
+    class="elevation-1"
+  ></v-data-table>
 </template>
-          
 
 <script>
-  export default {
-    data: () => ({
-      dense: false,
-      fixedHeader: false,
-      height: 300,
+export default {
+  data() {
+    return {
+      headers: [
+        { text: "Detail", align: "left", sortable: false, value: "name" },
+        { text: "Session", align: "center", value: "sess" },
+        { text: "Sect", align: "center", value: "sect" },
+        { text: "Text", align: "center", value: "text" },
+        { text: "Class#", align: "center", value: "class" },
+        { text: "Seats available", align: "center", value: "seat" },
+        { text: "Enrolled status", align: "center", value: "status" },
+        { text: "Comp", align: "center", value: "comp" },
+        { text: "Loc", align: "center", value: "map" },
+        { text: "Days", align: "center", value: "day" },
+        { text: "Time", align: "center", value: "time" },
+        { text: "Instructor", align: "center", value: "instruct" },
+        { text: "Consent", align: "center", value: "consent" }
+      ],
       courses: [
         {
-          detail: null,
-          session: 1,
-          section: 1,
-          textbook: null,
-          classnum: 16320,
-          seats: '-10',
-          status: 'closed',
-          comp: 'LEC',
-          loc: 'JD3510',
-          day: 'Tu/Th',
-          instructor: 'McInhenny, Robert D',
-          content: null,
+          name: null,
+          sess: 1,
+          sect: "01",
+          text: null,
+          class: 16320,
+          seat: "-10",
+          status: "closed",
+          comp: "LEC",
+          map: "JD3510",
+          day: "Tu/Th",
+          time: "02:00pm-03:15pm",
+          instruct: "McInhenny, Robert D",
+          consent: null
         },
         {
-          detail: null,
-          session: 1,
-          section: 2,
-          textbook: null,
-          classnum: 16321,
-          seats: '-2',
-          status: 'closed',
-          comp: 'LEC',
-          loc: 'JD1618',
-          day: 'Tu/Th',
-          instructor: 'Lazik, George L',
-          content: null,
+          name: null,
+          sess: 1,
+          sect: "02",
+          text: null,
+          class: 16321,
+          seat: "-2",
+          status: "closed",
+          comp: "LEC",
+          map: "JD1618",
+          day: "Tu/Th",
+          time: "02:00pm-03:15pm",
+          instruct: "Lazik, George L",
+          consent: null
         },
         {
-          detail: null,
-          session: 1,
-          section: 3,
-          textbook: null,
-          classnum: 16839,
-          seats: '-7',
-          status: 'closed',
-          comp: 'LEC',
-          loc: 'JD1618',
-          day: 'Tu/Th',
-          instructor: 'Lazik, George L',
-          content: null,
+          name: null,
+          sess: 1,
+          sect: "03",
+          text: null,
+          class: 16839,
+          seat: "-7",
+          status: "closed",
+          comp: "LEC",
+          map: "JD1618",
+          day: "Tu/Th",
+          time: "02:00pm-03:15pm",
+          instruct: "Lazik, George L",
+          consent: null
         },
         {
-          detail: null,
-          session: 1,
-          section: 4,
-          textbook: null,
-          classnum: 17067,
-          seats: '0',
-          status: 'closed',
-          comp: 'LEC',
-          loc: 'JD1600',
-          day: 'Tu/Th',
-          instructor: 'Lazik, George L',
-          content: null,
+          name: null,
+          sess: 1,
+          sect: "04",
+          text: null,
+          class: 17067,
+          seat: "0",
+          status: "closed",
+          comp: "LEC",
+          map: "JD1600",
+          day: "Tu/Th",
+          time: "02:00pm-03:15pm",
+          instruct: "Lazik, George L",
+          consent: null
         },
         {
-          detail: null,
-          session: 1,
-          section: 5,
-          textbook: null,
-          classnum: 21293,
-          seats: '-2',
-          status: 'closed',
-          comp: 'LEC',
-          loc: 'JD3510',
-          day: 'Tu',
-          instructor: 'Bhatt, Vijay J',
-          content: null,
-        },
-      ],
-    }),
+          name: null,
+          sess: 1,
+          sect: "05",
+          text: null,
+          class: 21293,
+          seat: "-2",
+          status: "closed",
+          comp: "LEC",
+          map: "JD3510",
+          day: "Tu",
+          time: "02:00pm-03:15pm",
+          instruct: "Bhatt, Vijay J",
+          consent: null
+        }
+      ]
+    };
   }
+};
 </script>
