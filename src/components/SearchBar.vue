@@ -7,10 +7,12 @@
     v-model="search.text"
     >
   </v-text-field>
+
 </template>
 
 <script>
 import Course from './Course';
+
 export default {
     components:{
         Course
