@@ -1,24 +1,32 @@
 <template>
   <v-app>
-    <v-expansion-panels>
-    <FilterBar></FilterBar>
-    </v-expansion-panels>
-    <SearchBar></SearchBar>
+	<v-container>
+	<SearchBar/>
+	<v-expansion-panels>
+		<FilterBar/>
+		<Subject/>
+		<Subject/>
+	</v-expansion-panels>
+	</v-container>
   </v-app>
 
 </template>
 
 <script>
+import Course from './components/Course';
+import SearchBar from './components/SearchBar';
 import FilterBar from './components/FilterBar';
 import SectionPage from './components/SectionPage';
-import SearchBar from './components/SearchBar';
+import Subject from './components/Subject';
 
 export default {
   name: 'App',
   components: {
+	Course,
+	FilterBar,
     SearchBar,
-    SectionPage,
-    FilterBar
+	SectionPage,
+	Subject
   },
   data: () => ({
     //

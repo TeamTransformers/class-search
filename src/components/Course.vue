@@ -1,5 +1,4 @@
 <template>
-  <v-expansion-panels>
   <v-expansion-panel>
         <v-expansion-panel-header>Course Name: #</v-expansion-panel-header>
         <v-expansion-panel-content>
@@ -9,7 +8,6 @@
       </v-card>
         </v-expansion-panel-content>
   </v-expansion-panel>
-  </v-expansion-panels>
 </template>
 
 <script>
