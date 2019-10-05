@@ -1,5 +1,4 @@
 <template>
-<v-app>
   <v-text-field 
     solo
     label="Text"
@@ -8,16 +7,12 @@
     v-model="search.text"
     >
   </v-text-field>
-  <v-card v-for="department in searched_departments" :key=department.id>
-            <v-card-title>{{department}}</v-card-title>
-            <Course></Course>
-            <Course></Course>
-  </v-card>
-</v-app>
+
 </template>
 
 <script>
 import Course from './Course';
+
 export default {
     components:{
         Course
