@@ -1,9 +1,6 @@
 <template>
   <v-app>
-    <v-expansion-panels>
-    <FilterBar></FilterBar>
-    </v-expansion-panels>
-    <SearchBar></SearchBar>
+    <Test></Test>
   </v-app>
 
 </template>
@@ -12,13 +9,14 @@
 import FilterBar from './components/FilterBar';
 import SectionPage from './components/SectionPage';
 import SearchBar from './components/SearchBar';
-
+import Test from './components/Test';
 export default {
   name: 'App',
   components: {
     SearchBar,
     SectionPage,
-    FilterBar
+    FilterBar,
+    Test
   },
   data: () => ({
     //
