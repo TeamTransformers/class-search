@@ -2,11 +2,11 @@
   <v-app>
 	<v-container>
 	<SearchBar/>
-	<v-expansion-panels>
+	<!--<v-expansion-panels>
 		<FilterBar/>
 		<Subject/>
 		<Subject/>
-	</v-expansion-panels>
+	</v-expansion-panels>-->
 	</v-container>
   </v-app>
 
