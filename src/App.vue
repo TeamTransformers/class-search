@@ -1,11 +1,10 @@
 <template>
   <v-app>
 	<v-container>
-	<!-- <SearchBar :result="searchResults" @searchArrayFilter="searchResults=$event"></SearchBar> -->
+	<SearchBar :result="searchResults" @searchArrayFilter="searchResults=$event"></SearchBar>
 	<v-expansion-panels>
 		<FilterBar/>
-		<Subject/>
-		<Subject/>
+		<Subject v-for="department in searchResults" :key="department.id" :department_name="department"></Subject>
 	</v-expansion-panels>
 	</v-container>
   </v-app>
@@ -28,13 +27,11 @@ export default {
 	SectionPage,
 	Subject
   },
-  data: () => ({
-    return:{
-		props: {
+  data(){
+    return{
 			searchResults:[]	
-		}
 	}
-  }),
+  },
   
 };
 </script>

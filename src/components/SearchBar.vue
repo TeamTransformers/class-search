@@ -19,10 +19,10 @@ export default {
     },
     created(){
         this.searched_departments=this.departments
+        this.$emit('searchArrayFilter',this.searched_departments)
     },
-        props:[result],
+        props:['result'],
     data(){
-
         return{
             // This is the list of all departments so we can filter to search_departments
             departments:[
@@ -77,7 +77,7 @@ export default {
                     return 0;
                 }
             }); 
-            this.$emit(searchArrayFilter(),this.searched_departments);
+            this.$emit('searchArrayFilter',this.searched_departments);
         }
     }
 }
