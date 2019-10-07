@@ -1,9 +1,11 @@
 <template>
   <v-data-table
+	:disable-sort="true"
     :headers="headers"
     :items="courses"
     :items-per-page="5"
     :hide-default-footer="true"
+    :hide-default-header="true"
     class="elevation-1"
   ></v-data-table>
 </template>
@@ -13,19 +15,11 @@ export default {
   data() {
     return {
       headers: [
-        { text: "Detail", align: "left", sortable: false, value: "name" },
-        { text: "Session", align: "center", value: "sess" },
-        { text: "Sect", align: "center", value: "sect" },
-        { text: "Text", align: "center", value: "text" },
         { text: "Class#", align: "center", value: "class" },
-        { text: "Seats available", align: "center", value: "seat" },
-        { text: "Enrolled status", align: "center", value: "status" },
-        { text: "Comp", align: "center", value: "comp" },
-        { text: "Loc", align: "center", value: "map" },
+        { text: "Room", align: "center", value: "map" },
         { text: "Days", align: "center", value: "day" },
         { text: "Time", align: "center", value: "time" },
         { text: "Instructor", align: "center", value: "instruct" },
-        { text: "Consent", align: "center", value: "consent" }
       ],
       courses: [
         {
