@@ -1,7 +1,7 @@
 <template>
   <v-app>
 	<v-container>
-	<SearchBar/>
+	<!-- <SearchBar :result="searchResults" @searchArrayFilter="searchResults=$event"></SearchBar> -->
 	<v-expansion-panels>
 		<FilterBar/>
 		<Subject/>
@@ -29,7 +29,11 @@ export default {
 	Subject
   },
   data: () => ({
-    //
+    return:{
+		props: {
+			searchResults:[]	
+		}
+	}
   }),
   
 };
