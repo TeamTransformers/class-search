@@ -2,9 +2,11 @@
   <v-text-field 
     solo
     label="Text"
+    append-outer-icon="mdi-magnify"
     @input="searchArrayFilter()"
     type="text"
     v-model="search.text"
+    @click:append-outer="submit"
     >
   </v-text-field>
 
@@ -45,6 +47,10 @@ export default {
         }
     },
     methods:{
+        submit: function(){
+            this.$emit("inputData", this.searched_departments);
+            this.searched_departments = "";
+        },
         // This gets called when any input is put into the search bar
         searchArrayFilter(){
             console.log(this.search.text)
