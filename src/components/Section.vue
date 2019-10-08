@@ -1,32 +1,51 @@
 <template>
-  <v-data-table
-    :headers="headers"
-    :items="courses"
-    :items-per-page="5"
-    :hide-default-footer="true"
-    class="elevation-1"
-  ></v-data-table>
+  <v-app>
+    <v-list v-for="data in courses" :key="data">
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="caption font-weight-black text-wrap text-center">Status</v-list-item-title>
+          <v-list-item-subtitle
+            class="caption font-weight-black text-wrap text-center"
+          >{{data.status}}</v-list-item-subtitle>
+        </v-list-item-content>
+        <v-list-item-content>
+          <v-list-item-title class="caption font-weight-black text-wrap text-center">Section</v-list-item-title>
+          <v-list-item-subtitle
+            class="caption font-weight-black text-wrap text-center"
+          >{{data.sect}}</v-list-item-subtitle>
+        </v-list-item-content>
+        <v-list-item-content>
+          <v-btn icon x-small color="blue">
+            <v-icon dark>mdi-book-open-page-variant</v-icon>
+          </v-btn>
+        </v-list-item-content>
+      </v-list-item>
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="caption font-weight-black text-wrap text-center">instructor</v-list-item-title>
+          <v-list-item-subtitle
+            class="caption font-weight-black text-wrap text-center"
+          >{{data.instruct}}</v-list-item-subtitle>
+        </v-list-item-content>
+        <v-list-item-content>
+          <v-list-item-title class="caption font-weight-black text-wrap text-center">Time</v-list-item-title>
+          <v-list-item-subtitle
+            class="caption font-weight-black text-wrap text-center"
+          >{{data.day+" "+data.time}}</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+      <v-divider></v-divider>
+    </v-list>
+  </v-app>
 </template>
 
 <script>
+import SectionPage from "./SectionPage";
 export default {
   data() {
+    
     return {
-      headers: [
-        { text: "Detail", align: "left", sortable: false, value: "name" },
-        { text: "Session", align: "center", value: "sess" },
-        { text: "Sect", align: "center", value: "sect" },
-        { text: "Text", align: "center", value: "text" },
-        { text: "Class#", align: "center", value: "class" },
-        { text: "Seats available", align: "center", value: "seat" },
-        { text: "Enrolled status", align: "center", value: "status" },
-        { text: "Comp", align: "center", value: "comp" },
-        { text: "Loc", align: "center", value: "map" },
-        { text: "Days", align: "center", value: "day" },
-        { text: "Time", align: "center", value: "time" },
-        { text: "Instructor", align: "center", value: "instruct" },
-        { text: "Consent", align: "center", value: "consent" }
-      ],
+      dialog:false,
       courses: [
         {
           name: null,

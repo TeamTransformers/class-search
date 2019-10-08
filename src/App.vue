@@ -26,11 +26,6 @@ export default {
     SectionPage,
     Subject
   },
-  data() {
-    return {
-      SearchResults: []
-    };
-  },
   data(){
     return{
 			searchResults:[]	

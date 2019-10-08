@@ -9,9 +9,6 @@
           </v-expansion-panels>
         </v-expansion-panel-content>
       </v-expansion-panel>
-    </expansion-panels>
-  </li>
-</div>
 </template>
 
 

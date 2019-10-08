@@ -21,7 +21,6 @@ export default {
     },
     created(){
         this.searched_departments=this.departments
-        this.$emit('searchArrayFilter',this.searched_departments)
     },
         props:['result'],
     data(){
@@ -49,9 +48,8 @@ export default {
         }
     },
     methods:{
-        submit: function(){
-            this.$emit("inputData", this.searched_departments);
-            this.searched_departments = "";
+        submit(){
+            this.$emit('searchArrayFilter',this.searched_departments);
         },
         // This gets called when any input is put into the search bar
         searchArrayFilter(){
@@ -83,7 +81,6 @@ export default {
                     return 0;
                 }
             }); 
-            this.$emit('searchArrayFilter',this.searched_departments);
         }
     }
 }
