@@ -1,7 +1,6 @@
 <template>
 	<v-expansion-panel>
-		<v-expansion-panel-header :value="department_name">{{department_name}}</v-expansion-panel-header>
-
+		<v-expansion-panel-header :value="department_name" class="red darken-1">{{department_name}}</v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-expansion-panels>
             <Course></Course>

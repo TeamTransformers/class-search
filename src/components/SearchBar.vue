@@ -2,11 +2,9 @@
   <v-text-field 
     solo
     label="Text"
-    append-outer-icon="mdi-magnify"
     @input="searchArrayFilter()"
     type="text"
     v-model="search.text"
-    @click:append-outer="submit"
     >
   </v-text-field>
 
@@ -21,6 +19,7 @@ export default {
     },
     created(){
         this.searched_departments=this.departments
+        this.$emit('searchArrayFilter',this.searched_departments);
     },
         props:['result'],
     data(){
@@ -48,9 +47,6 @@ export default {
         }
     },
     methods:{
-        submit(){
-            this.$emit('searchArrayFilter',this.searched_departments);
-        },
         // This gets called when any input is put into the search bar
         searchArrayFilter(){
             console.log(this.search.text)
@@ -81,6 +77,7 @@ export default {
                     return 0;
                 }
             }); 
+            this.$emit('searchArrayFilter',this.searched_departments);
         }
     }
 }

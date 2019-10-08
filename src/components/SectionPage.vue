@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-app>
     <v-data-iterator :items="section" hide-default-footer>
       <template v-slot:header="head">
         <v-toolbar
@@ -9,9 +9,6 @@
           dark
           :elevation="24"
         >
-          <v-btn class="mx-0" fab x-small color="red draken-4" dark :elevation="24">
-            <v-icon dark>mdi-arrow-left</v-icon>
-          </v-btn>
           <div class="text-center">
             <v-toolbar-title
               class="caption font-weight-bold text-wrap text-center"
@@ -258,7 +255,7 @@
         </v-row>
       </template>
     </v-data-iterator>
-  </v-container>
+  </v-app>
 </template>
 
 <script>

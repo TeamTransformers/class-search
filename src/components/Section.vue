@@ -1,41 +1,49 @@
 <template>
   <v-app>
-    <v-list v-for="data in courses" :key="data">
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title class="caption font-weight-black text-wrap text-center">Status</v-list-item-title>
-          <v-list-item-subtitle
-            class="caption font-weight-black text-wrap text-center"
-          >{{data.status}}</v-list-item-subtitle>
-        </v-list-item-content>
-        <v-list-item-content>
-          <v-list-item-title class="caption font-weight-black text-wrap text-center">Section</v-list-item-title>
-          <v-list-item-subtitle
-            class="caption font-weight-black text-wrap text-center"
-          >{{data.sect}}</v-list-item-subtitle>
-        </v-list-item-content>
-        <v-list-item-content>
-          <v-btn icon x-small color="blue">
-            <v-icon dark>mdi-book-open-page-variant</v-icon>
+    <div v-show="display">
+      <v-list v-for="data in courses" :key="data">
+        <v-list-item>
+          <v-list-item-content>
+            <v-list-item-title class="caption font-weight-black text-wrap text-center">Status</v-list-item-title>
+            <v-list-item-subtitle
+              class="caption font-weight-black text-wrap text-center"
+            >{{data.status}}</v-list-item-subtitle>
+          </v-list-item-content>
+          <v-list-item-content>
+            <v-list-item-title class="caption font-weight-black text-wrap text-center">Section</v-list-item-title>
+            <v-list-item-subtitle
+              class="caption font-weight-black text-wrap text-center"
+            >{{data.sect}}</v-list-item-subtitle>
+          </v-list-item-content>
+          <v-list-item-content>
+            <v-btn icon x-small color="blue" @click="display=false">
+              <v-icon dark>mdi-book-open-page-variant</v-icon>
+            </v-btn>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-content>
+            <v-list-item-title class="caption font-weight-black text-wrap text-center">instructor</v-list-item-title>
+            <v-list-item-subtitle
+              class="caption font-weight-black text-wrap text-center"
+            >{{data.instruct}}</v-list-item-subtitle>
+          </v-list-item-content>
+          <v-list-item-content>
+            <v-list-item-title class="caption font-weight-black text-wrap text-center">Time</v-list-item-title>
+            <v-list-item-subtitle
+              class="caption font-weight-black text-wrap text-center"
+            >{{data.day+" "+data.time}}</v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+        <v-divider></v-divider>
+      </v-list>
+    </div>
+    <div v-show="!display">
+      <v-btn class="mx-0" fab x-small dark @click="display=true">
+            <v-icon dark>mdi-cancel</v-icon>
           </v-btn>
-        </v-list-item-content>
-      </v-list-item>
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title class="caption font-weight-black text-wrap text-center">instructor</v-list-item-title>
-          <v-list-item-subtitle
-            class="caption font-weight-black text-wrap text-center"
-          >{{data.instruct}}</v-list-item-subtitle>
-        </v-list-item-content>
-        <v-list-item-content>
-          <v-list-item-title class="caption font-weight-black text-wrap text-center">Time</v-list-item-title>
-          <v-list-item-subtitle
-            class="caption font-weight-black text-wrap text-center"
-          >{{data.day+" "+data.time}}</v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
-      <v-divider></v-divider>
-    </v-list>
+      <SectionPage/>
+    </div>
   </v-app>
 </template>
 
@@ -43,9 +51,8 @@
 import SectionPage from "./SectionPage";
 export default {
   data() {
-    
     return {
-      dialog:false,
+      display: true,
       courses: [
         {
           name: null,
@@ -124,6 +131,14 @@ export default {
         }
       ]
     };
+  },
+  methods:{
+        send(){
+            this.$emit('displaySec',false);
+        },
+  },
+  components: {
+    SectionPage
   }
 };
 </script>

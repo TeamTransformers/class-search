@@ -1,13 +1,22 @@
 <template>
-  <v-app>
-	<v-container>
-	<SearchBar :result="searchResults" @searchArrayFilter="searchResults=$event"></SearchBar>
-	<v-expansion-panels>
-		<FilterBar/>
-		<Subject v-for="department in searchResults" :key="department.id" :department_name="department"></Subject>
-	</v-expansion-panels>
-	</v-container>
-  </v-app>
+  <v-container >
+    <div v-show="display">
+    <SearchBar :result="searchResults" @searchArrayFilter="searchResults=$event"></SearchBar>
+    <v-expansion-panels>
+      <FilterBar />
+      <Subject
+        :result="display"
+        @displaySec="display=false"
+        v-for="department in searchResults"
+        :key="department.id"
+        :department_name="department"
+      ></Subject>
+    </v-expansion-panels>
+    </div>
+    <div v-show="!display">
+      <SectionPage/>
+    </div>
+  </v-container>
 </template>
 
 <script>
@@ -26,11 +35,11 @@ export default {
     SectionPage,
     Subject
   },
-  data(){
-    return{
-			searchResults:[]	
-	}
-  },
-  
+  data() {
+    return {
+      display: true,
+      searchResults: []
+    };
+  }
 };
 </script>

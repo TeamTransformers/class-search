@@ -1,6 +1,6 @@
 <template>
   <v-expansion-panel>
-        <v-expansion-panel-header>Course Name: #</v-expansion-panel-header>
+        <v-expansion-panel-header class="grey">Course Name: #</v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-card class="d-flex flex-row justify-start align-center">
           <Section></Section>
