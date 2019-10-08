@@ -1,6 +1,5 @@
 <template>
   <v-app>
-    <div v-show="display">
       <v-list v-for="data in courses" :key="data">
         <v-list-item>
           <v-list-item-content>
@@ -16,7 +15,7 @@
             >{{data.sect}}</v-list-item-subtitle>
           </v-list-item-content>
           <v-list-item-content>
-            <v-btn icon x-small color="blue" @click="display=false">
+            <v-btn icon x-small color="blue" @click="send">
               <v-icon dark>mdi-book-open-page-variant</v-icon>
             </v-btn>
           </v-list-item-content>
@@ -37,13 +36,6 @@
         </v-list-item>
         <v-divider></v-divider>
       </v-list>
-    </div>
-    <div v-show="!display">
-      <v-btn class="mx-0" fab x-small dark @click="display=true">
-            <v-icon dark>mdi-cancel</v-icon>
-          </v-btn>
-      <SectionPage/>
-    </div>
   </v-app>
 </template>
 
@@ -52,7 +44,7 @@ import SectionPage from "./SectionPage";
 export default {
   data() {
     return {
-      display: true,
+      open: 1,
       courses: [
         {
           name: null,
@@ -134,8 +126,8 @@ export default {
   },
   methods:{
         send(){
-            this.$emit('displaySec',false);
-        },
+            this.$emit('Switch');
+        }
   },
   components: {
     SectionPage

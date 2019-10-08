@@ -1,7 +1,7 @@
 <template>
   <v-text-field 
     solo
-    label="Text"
+    label="Csun:Class Search-Type here"
     @input="searchArrayFilter()"
     type="text"
     v-model="search.text"
