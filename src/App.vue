@@ -36,7 +36,6 @@ export default {
   },
   data() {
     return {
-      hide:0,
       display: 0,
       searchResults: []
     };
