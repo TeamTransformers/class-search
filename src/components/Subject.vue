@@ -1,11 +1,10 @@
 <template>
 	<v-expansion-panel>
-		<v-expansion-panel-header :value="department_name">{{department_name}}</v-expansion-panel-header>
-
+		<v-expansion-panel-header :value="department_name" class="red darken-3">{{department_name}}</v-expansion-panel-header>
         <v-expansion-panel-content>
           <v-expansion-panels>
-            <Course></Course>
-            <Course></Course>
+            <Course @next="send"></Course>
+            <Course @next="send"></Course>
           </v-expansion-panels>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -23,6 +22,11 @@ export default {
 		return{
 			department: []
 		}
-	}
+  },
+  methods:{
+        send(){
+            this.$emit('final');
+        }
+  },
 }
 </script>

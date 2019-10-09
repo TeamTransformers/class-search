@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-app>
     <v-data-iterator :items="section" hide-default-footer>
       <template v-slot:header="head">
         <v-toolbar
@@ -9,7 +9,7 @@
           dark
           :elevation="24"
         >
-          <v-btn class="mx-0" fab x-small color="red draken-4" dark :elevation="24">
+        <v-btn class="mx-0" fab x-small color="red draken-4" dark :elevation="24" @click="send">
             <v-icon dark>mdi-arrow-left</v-icon>
           </v-btn>
           <div class="text-center">
@@ -225,10 +225,10 @@
                     </v-list-item>
                     <v-list-item>
                       <v-list-item-content class="text-left">
-                        <v-list-item-title class="caption font-weight-black">Class Notes</v-list-item-title>
+                        <v-list-item-title class="caption font-weight-black">Class Description</v-list-item-title>
                         <v-list-item-subtitle
                           class="caption font-weight-black text-wrap text-center"
-                        >{{item.Class_Notes}}</v-list-item-subtitle>
+                        >{{item.Description}}</v-list-item-subtitle>
                       </v-list-item-content>
                     </v-list-item>
                   </v-list>
@@ -258,7 +258,7 @@
         </v-row>
       </template>
     </v-data-iterator>
-  </v-container>
+  </v-app>
 </template>
 
 <script>
@@ -298,16 +298,19 @@ export default {
         Final_exam_time: "08:00Am - 10:00Am",
         Final_exam_loc: "JD1600",
 
-        Course_Attri: "Array needed",
+        Course_Attri: "Lower Division Subj-Expl Lifelong Learning GE Plan R Subj-Expl Lifelong Learning",
 
-        Subject_Notes:
-          " Department Office: Jd 4503 in need of more description in order to tedt the flexability of the screen space we are given to us and opperate",
-        Class_Notes: "write something write something write something write something write something write something write something write something write somethingwrite something vv",
+        Subject_Notes:"Department Office: JD 4503; (818) 677-3398. College of Engineering and Computer Science.",
 
-        Description: "Not open to computer Science majors.",
+        Description: "Not open to Computer Science majors. Introduction to the uses, concepts, techniques and terminology of computing. Places the possibilities and problems of computer use in historical, economic and social contexts. Shows how computers can assist in a wide range of personal, commercial and organizational activities. Typical computer applications, including word processing, spreadsheets and databases. (Available for General Education, E Lifelong Learning or Plan R Lifelong Learning.) (IC)",
         Course_Terms: "Fall Semester 2019, Spring Semester 2020"
       }
     ]
-  })
+  }),
+  methods:{
+     send(){
+            this.$emit('restore');
+        }
+  }
 };
 </script>

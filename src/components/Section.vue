@@ -1,41 +1,41 @@
 <template>
   <v-app>
-    <v-list v-for="data in courses" :key="data">
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title class="caption font-weight-black text-wrap text-center">Status</v-list-item-title>
-          <v-list-item-subtitle
-            class="caption font-weight-black text-wrap text-center"
-          >{{data.status}}</v-list-item-subtitle>
-        </v-list-item-content>
-        <v-list-item-content>
-          <v-list-item-title class="caption font-weight-black text-wrap text-center">Section</v-list-item-title>
-          <v-list-item-subtitle
-            class="caption font-weight-black text-wrap text-center"
-          >{{data.sect}}</v-list-item-subtitle>
-        </v-list-item-content>
-        <v-list-item-content>
-          <v-btn icon x-small color="blue">
-            <v-icon dark>mdi-book-open-page-variant</v-icon>
-          </v-btn>
-        </v-list-item-content>
-      </v-list-item>
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title class="caption font-weight-black text-wrap text-center">instructor</v-list-item-title>
-          <v-list-item-subtitle
-            class="caption font-weight-black text-wrap text-center"
-          >{{data.instruct}}</v-list-item-subtitle>
-        </v-list-item-content>
-        <v-list-item-content>
-          <v-list-item-title class="caption font-weight-black text-wrap text-center">Time</v-list-item-title>
-          <v-list-item-subtitle
-            class="caption font-weight-black text-wrap text-center"
-          >{{data.day+" "+data.time}}</v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
-      <v-divider></v-divider>
-    </v-list>
+      <v-list v-for="data in courses" :key="data">
+        <v-list-item>
+          <v-list-item-content>
+            <v-list-item-title class="caption font-weight-black text-wrap text-center">Status</v-list-item-title>
+            <v-list-item-subtitle
+              class="caption font-weight-black text-wrap text-center"
+            >{{data.status}}</v-list-item-subtitle>
+          </v-list-item-content>
+          <v-list-item-content>
+            <v-list-item-title class="caption font-weight-black text-wrap text-center">Section</v-list-item-title>
+            <v-list-item-subtitle
+              class="caption font-weight-black text-wrap text-center"
+            >{{data.sect}}</v-list-item-subtitle>
+          </v-list-item-content>
+          <v-list-item-content>
+            <v-btn icon x-small color="blue" @click="send">
+              <v-icon dark>mdi-book-open-page-variant</v-icon>
+            </v-btn>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-content>
+            <v-list-item-title class="caption font-weight-black text-wrap text-center">instructor</v-list-item-title>
+            <v-list-item-subtitle
+              class="caption font-weight-black text-wrap text-center"
+            >{{data.instruct}}</v-list-item-subtitle>
+          </v-list-item-content>
+          <v-list-item-content>
+            <v-list-item-title class="caption font-weight-black text-wrap text-center">Time</v-list-item-title>
+            <v-list-item-subtitle
+              class="caption font-weight-black text-wrap text-center"
+            >{{data.day+" "+data.time}}</v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+        <v-divider></v-divider>
+      </v-list>
   </v-app>
 </template>
 
@@ -43,9 +43,8 @@
 import SectionPage from "./SectionPage";
 export default {
   data() {
-    
     return {
-      dialog:false,
+      open: 1,
       courses: [
         {
           name: null,
@@ -124,6 +123,14 @@ export default {
         }
       ]
     };
+  },
+  methods:{
+        send(){
+            this.$emit('Switch');
+        }
+  },
+  components: {
+    SectionPage
   }
 };
 </script>
